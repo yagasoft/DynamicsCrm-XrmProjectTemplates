@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.1.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+	<TemplateData>
+		<Name>Dynamics CRM Unit/Hybrid Test Project</Name>
+		<Description>A project that contains unit and hybrid tests for Dynamics CRM Plug-ins, Workflow Activities, JavaScript Customisations and Common Libraries</Description>
+		<Icon>xRM_32x32.png</Icon>
+		<ProjectType>CSharp</ProjectType>
+		<RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
+		<SortOrder>1000</SortOrder>
+		<TemplateID>0f98a0b5-adca-40f6-9e45-53461fe432ce</TemplateID>
+		<CreateNewFolder>true</CreateNewFolder>
+		<DefaultName>UnitHybridTests</DefaultName>
+		<ProvideDefaultName>true</ProvideDefaultName>
+	</TemplateData>
+	<TemplateContent>
+		<Project File="ProjectTemplate.csproj" ReplaceParameters="true">
+			<Folder Name="Common" TargetFolderName="Common"/>
+			<Folder Name="Plugins" TargetFolderName="Plugins" />
+			<Folder Name="Properties" TargetFolderName="Properties">
+				<ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+			</Folder>
+			<Folder Name="WFActivities" TargetFolderName="WFActivities" />
+			<Folder Name="Js" TargetFolderName="Js" />
+			<ProjectItem ReplaceParameters="true" TargetFileName="App.config">App.config</ProjectItem>
+		</Project>
+	</TemplateContent>
+	<WizardExtension>
+		<Assembly>NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+		<FullClassName>NuGet.VisualStudio.TemplateWizard</FullClassName>
+	</WizardExtension>
+	<WizardData>
+		<packages repository="extension"
+			  repositoryId="Xrm.Framework.VSExtensions.Package.C05B81AB-D0ED-4748-8A65-E961B07D86AA">
+      <package id="LinkDev.Libraries.Common" version="1.5.3" targetFramework="net452" developmentDependency="true" />
+      <package id="LinkDev.Libraries.EnhancedOrgService" version="1.2.5" targetFramework="net452" developmentDependency="true" />
+      <package id="Microsoft.CrmSdk.CoreAssemblies" version="9.0.0.7" targetFramework="net452" />
+      <package id="Microsoft.CrmSdk.Deployment" version="9.0.0.7" targetFramework="net452" />
+      <package id="Microsoft.CrmSdk.Workflow" version="9.0.0.7" targetFramework="net452" />
+      <package id="Microsoft.CrmSdk.XrmTooling.CoreAssembly" version="9.0.0.7" targetFramework="net452" />
+      <package id="Microsoft.IdentityModel.Clients.ActiveDirectory" version="2.22.302111727" targetFramework="net452" />
+			<package id="Moq" version="4.2.1502.0911" targetFramework="net452" />
+			<package id="Xrm.Framework.Core" version="3.0.0.1" targetFramework="net40" />
+      <package id="Xrm.Framework.Test.Hybrid" version="1.0.1" targetFramework="net452" />
+    </packages>
+	</WizardData>
+</VSTemplate>

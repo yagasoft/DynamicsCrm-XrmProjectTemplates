@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>Dynamics CRM 2016 WF Project</Name>
+    <Description>Dynamics CRM 2016 WF Project</Description>
+    <Icon>xRM_32x32.png</Icon>
+    <ProjectType>CSharp</ProjectType>
+    <RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
+    <SortOrder>1000</SortOrder>
+    <TemplateID>49be64c8-049b-4283-ad4a-f2c450d149c4</TemplateID>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>WFProject</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="ProjectTemplate.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+		<ProjectItem ReplaceParameters="true" TargetFileName="key.snk">key.snk</ProjectItem>
+		<ProjectItem ReplaceParameters="true" TargetFileName="Common.cs">Common.cs</ProjectItem>
+	</Project>
+  </TemplateContent>
+	<WizardExtension>
+		<Assembly>NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+		<FullClassName>NuGet.VisualStudio.TemplateWizard</FullClassName>
+	</WizardExtension>
+	<WizardData>
+		<packages repository="extension"
+			  repositoryId="Xrm.Framework.VSExtensions.Package.C05B81AB-D0ED-4748-8A65-E961B07D86AA">
+		  <package id="Microsoft.CrmSdk.CoreAssemblies" version="8.1.0.2" targetFramework="net452" />
+		  <package id="Microsoft.CrmSdk.Workflow" version="8.1.0.2" targetFramework="net452" />
+			<package id="Microsoft.IdentityModel" version="6.1.7600.16394" targetFramework="net452" />		</packages>
+	</WizardData>
+</VSTemplate>

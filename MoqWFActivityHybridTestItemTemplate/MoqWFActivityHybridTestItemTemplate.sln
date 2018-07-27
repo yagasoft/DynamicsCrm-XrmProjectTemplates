@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoqWFActivityHybridTestItemTemplate", "MoqWFActivityHybridTestItemTemplate.csproj", "{39983CAE-87D1-45B7-8851-F5F0B3897942}"
+EndProject
+Global
+	GlobalSection(CrmCodeGeneration) = preSolution
+		UseSSL = False
+		UseIFD = False
+		UseOnline = False
+		UseOffice365 = False
+		ServerName = 
+		ServerPort = 
+		HomeRealm = 
+		Domain = 
+		Organization = DEV-CRM
+		IncludeEntities = account,contact,lead,opportunity,systemuser
+		IncludeNonStandard = False
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39983CAE-87D1-45B7-8851-F5F0B3897942}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39983CAE-87D1-45B7-8851-F5F0B3897942}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39983CAE-87D1-45B7-8851-F5F0B3897942}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39983CAE-87D1-45B7-8851-F5F0B3897942}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

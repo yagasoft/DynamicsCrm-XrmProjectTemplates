@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Xrm.Framework.Test.Integration.XrmIntegrationTest">
+    <Position X="2.75" Y="0.75" Width="2.25" />
+    <Members>
+      <Field Name="_connection" Hidden="true" />
+      <Field Name="_service" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Enum Name="Xrm.Framework.Test.Integration.XrmIntegrationTest.ProcessStatus" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Integration\XrmIntegrationTest.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Xrm.Framework.Test.Integration.XrmIntegrationTest.ProcessType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Integration\XrmIntegrationTest.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAQACAAACAEQAAAAAAAACAAAgACAAAAAAAAABAA=</HashCode>
+      <FileName>Integration\XrmIntegrationTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xrm.Framework.Test.Integration.PluginIntegrationTest">
+    <Position X="2.5" Y="5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Integration\PluginIntegrationTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xrm.Framework.Test.Integration.AsyncPluginIntegrationTest">
+    <Position X="6" Y="5" Width="2.5" />
+    <Members>
+      <Method Name="AsyncPluginIntegrationTest" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Integration\AsyncPluginIntegrationTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xrm.Framework.Test.Integration.AsyncIntegrationTest">
+    <Position X="6" Y="1" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAgAAECAAAAUIAAAAAAQAAAAABAAAAAAAAgACAAAA=</HashCode>
+      <FileName>Integration\AsyncIntegrationTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xrm.Framework.Test.XrmTest">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAQAAAAAAAEAACAAAAAAAAAAACEAAAAA=</HashCode>
+      <FileName>XrmTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

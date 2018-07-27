@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Xrm.Framework.Test.Hybrid</id>
+    <version>1.0.1</version>
+    <title>XRM Hybrid Test Framework</title>
+    <authors>WaelHamze,ramontebar,Ahmed el-Sawalhy</authors>
+    <owners>Ahmed el-Sawalhy</owners>
+    <licenseUrl>http://xrmtestframework.codeplex.com/license</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <copyright>Copyright 2018</copyright>
+    <tags>xRM Test Framework for Dynamics CRM 2018</tags>
+  </metadata>
+</package>
