@@ -1,5 +1,5 @@
 # DynamicsCrm-XrmProjectTemplates
-### Version: 1.1
+### Version: 2.7.7
 ---
 
 A Visual Studio plugin that makes it easier to perform unit/intergration-hybrid testing for CRM plugins. It also includes a few templates for plugin and step projects for fast start.

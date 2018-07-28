@@ -1,13 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="Xrm.Framework.VSExtensions.Package.C05B81AB-D0ED-4748-8A65-E961B07D86AA" Version="2.7.6" Language="en-US" Publisher="Ahmed el-Sawalhy" />
+        <Identity Id="XrmProjectTemplates" Version="2.7.7" Language="en-US" Publisher="Ahmed el-Sawalhy" />
         <DisplayName>XRM Templates</DisplayName>
-        <Description xml:space="preserve">Toolkit for the Dynamics 365 XRM Developer Framework. This provides additional Visual Studio templates and productivity tools for developing Dynamics CRM extensions including templates for plugins, WF steps, unit, hybrid, and integration tests for the Dynamics CRM components.</Description>
-        <MoreInfo>http://xrmtestframework.codeplex.com/</MoreInfo>
+        <Description xml:space="preserve">Visual Studio plugin that makes it easier to perform unit/intergration-hybrid testing for CRM plugins. It also includes a few templates for plugin and step projects for fast start.</Description>
+        <MoreInfo>https://marketplace.visualstudio.com/items?itemName=Yagasoft.XrmProjectTemplates</MoreInfo>
         <License>Docs\License.txt</License>
-        <GettingStartedGuide>http://xrmtestframework.codeplex.com/documentation</GettingStartedGuide>
-        <ReleaseNotes>http://xrmtestframework.codeplex.com/releases/</ReleaseNotes>
         <Icon>Images\xRM_32x32.png</Icon>
         <Tags>Dynamics 365, xRM Developer Framework, Unit Tests, Hybrid Tests, Integration Tests, Fakes, Moq</Tags>
     </Metadata>
