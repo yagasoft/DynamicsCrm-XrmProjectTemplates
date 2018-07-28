@@ -6,7 +6,8 @@
         <Description xml:space="preserve">Visual Studio plugin that makes it easier to perform unit/intergration-hybrid testing for CRM plugins. It also includes a few templates for plugin and step projects for fast start.</Description>
         <MoreInfo>https://marketplace.visualstudio.com/items?itemName=Yagasoft.XrmProjectTemplates</MoreInfo>
         <License>Docs\License.txt</License>
-        <Icon>Images\xRM_32x32.png</Icon>
+        <Icon>Images\xrm.png</Icon>
+        <PreviewImage>Images\xrm.png</PreviewImage>
         <Tags>Dynamics 365, xRM Developer Framework, Unit Tests, Hybrid Tests, Integration Tests, Fakes, Moq</Tags>
     </Metadata>
     <Installation>
