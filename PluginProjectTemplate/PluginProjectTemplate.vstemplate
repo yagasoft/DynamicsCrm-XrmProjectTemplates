@@ -24,8 +24,7 @@
 		<FullClassName>NuGet.VisualStudio.TemplateWizard</FullClassName>
 	</WizardExtension>
 	<WizardData>
-    <packages repository="extension"
-              repositoryId="Xrm.Framework.VSExtensions.Package.C05B81AB-D0ED-4748-8A65-E961B07D86AA">
+    <packages repository="extension" repositoryId="XrmProjectTemplates">
       <package id="Microsoft.CrmSdk.CoreAssemblies" version="9.0.0.7" targetFramework="net452" />
       <package id="Microsoft.CrmSdk.Workflow" version="9.0.0.7" targetFramework="net452" />
     </packages>

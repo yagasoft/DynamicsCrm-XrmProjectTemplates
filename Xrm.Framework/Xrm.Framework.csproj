@@ -102,21 +102,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="..\packages\IC.Framework.XRM.SDK.CRM.3.0.0\IC.Framework.XRM.SDK.CRM.3.0.0.nupkg">
-      <Link>Packages\IC.Framework.XRM.SDK.CRM.3.0.0.nupkg</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <Content Include="..\Lib\LinkDev.Libraries.Common.1.6.2.nupkg">
-      <Link>Packages\LinkDev.Libraries.Common.1.6.2.nupkg</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <Content Include="..\Lib\LinkDev.Libraries.EnhancedOrgService.1.3.3.nupkg">
-      <Link>Packages\LinkDev.Libraries.EnhancedOrgService.1.3.3.nupkg</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
     <None Include="app.config" />
     <Content Include="Packages\Microsoft.CrmSdk.CoreAssemblies.8.1.0.2.nupkg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -143,6 +128,18 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Packages\Microsoft.CrmSdk.XrmTooling.CoreAssembly.9.0.0.7.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\IC.Framework.XRM.SDK.CRM.3.0.0.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\LinkDev.Libraries.Common.1.6.2.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\LinkDev.Libraries.EnhancedOrgService.1.3.3.nupkg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
