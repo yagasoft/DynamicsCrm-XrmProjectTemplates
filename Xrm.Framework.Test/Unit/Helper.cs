@@ -36,7 +36,7 @@ namespace Xrm.Framework.Test.Unit
 	internal class Helper
 	{
 		internal static IEnhancedServicePool<EnhancedOrgService> ServicePool =
-			EnhancedServiceHelper.GetPool(Defaults.CONNECTION_STRING, new EnhancedServiceParams{IsTransactionsEnabled = true});
+			EnhancedServiceHelper.GetPool(Defaults.CONNECTION_STRING, 10, new EnhancedServiceParams{IsTransactionsEnabled = true});
 
 		internal static EnhancedOrgService Service => ServicePool.GetService();
 		internal static XrmServiceContext Context => new XrmServiceContext(Service);
@@ -51,7 +51,7 @@ namespace Xrm.Framework.Test.Unit
 		internal static T GetObject<T>(string assemblyName, string className)
 		{
 			var pluginAssembly = Assembly.LoadFile(new FileInfo(assemblyName + ".dll").FullName);
-			var pluginClass = pluginAssembly.GetType(assemblyName + "." + className);
+			var pluginClass = pluginAssembly.GetType(className, true, true);
 			return (T)Activator.CreateInstance(pluginClass);
 		}
 

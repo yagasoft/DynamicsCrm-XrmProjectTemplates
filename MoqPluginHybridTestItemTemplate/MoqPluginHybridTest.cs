@@ -20,8 +20,6 @@ namespace $rootnamespace$
 {
 	/// <summary>
 	///     You must add the plugin project in this test's references.
-	///     The plugin's class, in its project, should be the same as the last part in its namespace;
-	///     e.g. namespace: "Plugins.Calculate", class: "Calculate".
 	///     This test WILL communicate with CRM directly, but it will revert any changes made after.
 	/// </summary>
 	[TestClass]
@@ -39,11 +37,8 @@ namespace $rootnamespace$
 		[ExcludeFromCodeCoverage]
 		public $safeitemrootname$()
 		{
-			// TODO: set assembly name (without '.dll')
-			assemblyName = "";
-
-			// TODO: set class name (plugin class name)
-			className = "";
+			// TODO: set plugin class
+			pluginClass = typeof(PluginClass);
 		}
 
 		/// <summary>

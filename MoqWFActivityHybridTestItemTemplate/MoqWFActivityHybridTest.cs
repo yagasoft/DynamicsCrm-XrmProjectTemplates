@@ -39,18 +39,15 @@ namespace $rootnamespace$
 		[ExcludeFromCodeCoverage]
 		public $safeitemrootname$()
 		{
-			// TODO: set assembly name (without '.dll')
-			assemblyName = "";
-
-			// TODO: set class name (activity class name)
-			className = "";
+			// TODO: set activity class
+			activityClass = typeof(ActivityClass);
 		}
 
-		/// <summary>
-		///     If there are common records that can be prepared for all tests, do that here.<br />
-		///     Anything done in this method MUST be static, as it's run only once.
-		/// </summary>
-		protected override void SetupCommon()
+/// <summary>
+///     If there are common records that can be prepared for all tests, do that here.<br />
+///     Anything done in this method MUST be static, as it's run only once.
+/// </summary>
+protected override void SetupCommon()
 		{
 			// TODO: should the framework revert actions taken by the test on CRM
 			undoTestActions = Defaults.UNDO_TEST_ACTIONS;

@@ -34,6 +34,15 @@ namespace Xrm.Framework.Test.Unit.Moq.Hybrid
 		protected string assemblyName;
 		protected string className;
 
+		protected Type pluginClass
+		{
+			set
+			{
+				className = value.FullName;
+				assemblyName = value.Assembly.GetName().Name;
+			}
+		}
+
 		// get an unmocked version of the service to use for actions that don't need reverting
 		protected static IOrganizationService service = Helper.Service;
 
