@@ -68,11 +68,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="..\Xrm.Framework.Test\bin\Release\Xrm.Framework.Test.Hybrid.1.0.1.nupkg">
-      <Link>Packages\Xrm.Framework.Test.Hybrid.1.0.1.nupkg</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
     <Content Include="Packages\Microsoft.CrmSdk.CoreAssemblies.7.0.0.1.nupkg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -99,6 +94,11 @@
     </Content>
     <Content Include="..\Xrm.Framework.Core\bin\Release\Xrm.Framework.Core.3.0.0.1.nupkg">
       <Link>Packages\Xrm.Framework.Core.3.0.0.1.nupkg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="..\Xrm.Framework.Test\bin\Release\Xrm.Framework.Test.Hybrid.1.0.1.nupkg">
+      <Link>Packages\Xrm.Framework.Test.Hybrid.1.0.1.nupkg</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>

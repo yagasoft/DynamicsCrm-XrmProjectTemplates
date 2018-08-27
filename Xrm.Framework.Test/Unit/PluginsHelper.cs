@@ -6,12 +6,9 @@
 #region Imports
 
 using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.IO;
 using System.Linq;
-using System.Reflection;
-using Microsoft.Crm.Sdk.Messages;
+using System.Text.RegularExpressions;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 
@@ -20,90 +17,71 @@ using Microsoft.Xrm.Sdk.Query;
 namespace Xrm.Framework.Test.Unit
 {
 	/// <summary>
-	/// Helper methods related to plugins.<br />
-	/// Version: 1.1.20
+	///     Helper methods related to plugins.<br />
+	///     Version: 1.1.20
 	/// </summary>
 	[ExcludeFromCodeCoverage]
 	internal class PluginsHelper : Helper
 	{
 		#region Plugin class
 
-
 		internal class PluginShell : IPlugin
 		{
 			public void Execute(IServiceProvider serviceProvider)
-			{
-			}
+			{ }
 		}
 
 		#endregion
-		
+
 		#region Plugin steps
 
-		/// <summary>
-		///     Disables enabled steps under the registered plugin passed as argument,
-		///     and adds those steps to a list to be enabled later (saving state).
-		/// </summary>
-		/// <param name="assemblyName">File name of the plugin without the extension.</param>
-		/// <param name="primaryEntityName"></param>
-		/// <param name="messageName"></param>
-		/// <param name="enabledSteps">List to save enabled steps in.</param>
-		internal static void DisableSteps(string assemblyName, string primaryEntityName, string messageName
-			, List<SdkMessageProcessingStep> enabledSteps)
+		internal static void SetStepsState(bool isEnabled, string[] pluginPatternsToToggle)
 		{
-			// get only enabled steps under the plugin
-			var query = new QueryExpression(SdkMessageProcessingStep.EntityLogicalName);
-			query.AddLink(PluginType.EntityLogicalName
-				, SdkMessageProcessingStepFields.EventHandler, PluginTypeFields.PluginTypeId)
-				.AddLink(PluginAssembly.EntityLogicalName
-				, PluginTypeFields.PluginAssemblyId, PluginAssemblyFields.PluginAssemblyId)
-				.LinkCriteria.AddCondition(PluginAssemblyFields.Name, ConditionOperator.Equal, assemblyName);
-			query.AddLink(SdkMessageFilter.EntityLogicalName
-				, SdkMessageProcessingStepFields.SdkMessageFilterId, SdkMessageFilterFields.SdkMessageFilterId)
-				.LinkCriteria.AddCondition(SdkMessageFilterFields.PrimaryObjectTypeCode
-				, ConditionOperator.Equal, primaryEntityName);
-			query.AddLink(SdkMessage.EntityLogicalName
-				, SdkMessageProcessingStepFields.SdkMessageId, SdkMessageFields.SdkMessageId)
-				.LinkCriteria.AddCondition(SdkMessageFields.Name, ConditionOperator.Equal, messageName);
-			query.Criteria.AddCondition(SdkMessageProcessingStepFields.StatusCode
-				, ConditionOperator.Equal, (int)SdkMessageProcessingStepEnums.StatusCode.Enabled);
-			query.ColumnSet = new ColumnSet(SdkMessageProcessingStepFields.Name);
-			var steps = Service.RetrieveMultiple(query)
-				.Entities.Select(step => step.ToEntity<SdkMessageProcessingStep>());
-
-			// disable enabled steps only
-			foreach (var assemblyStep in steps)
+			foreach (var step in GetMatchingSteps(!isEnabled, pluginPatternsToToggle))
 			{
-				// save the steps that are enabled to re-enable them again later
-				enabledSteps.Add(assemblyStep);
-
-				var request = new SetStateRequest
-				              {
-					              EntityMoniker = assemblyStep.ToEntityReference(),
-					              State = new OptionSetValue((int) SdkMessageProcessingStepState.Disabled),
-					              Status = new OptionSetValue((int) SdkMessageProcessingStepEnums.StatusCode.Disabled)
-				              };
-				Service.Execute(request);
+				Service.Update(
+					new Entity(SdkMessageProcessingStep.EntityLogicalName)
+					{
+						Id = step.Id,
+						["statecode"] = new OptionSetValue((int)(
+							isEnabled
+								? SdkMessageProcessingStepState.Enabled
+								: SdkMessageProcessingStepState.Disabled)),
+						["statuscode"] = new OptionSetValue((int)(
+							isEnabled
+								? SdkMessageProcessingStepEnums.StatusCode.Enabled
+								: SdkMessageProcessingStepEnums.StatusCode.Disabled))
+					});
 			}
 		}
 
-		/// <summary>
-		///     Enable disabled steps that were previously enabled only, using the provided list.
-		/// </summary>
-		/// <param name="enabledSteps">List of previously enabled steps.</param>
-		internal static void EnableSteps(List<SdkMessageProcessingStep> enabledSteps)
+		private static EntityReference[] GetMatchingSteps(bool isEnabled, string[] pluginPatternsToToggle)
 		{
-			// enabled disabled steps that were 
-			foreach (var assemblyStep in enabledSteps)
-			{
-				var request = new SetStateRequest
-				              {
-					              EntityMoniker = assemblyStep.ToEntityReference(),
-					              State = new OptionSetValue((int) SdkMessageProcessingStepState.Enabled),
-					              Status = new OptionSetValue((int) SdkMessageProcessingStepEnums.StatusCode.Enabled)
-				              };
-				Service.Execute(request);
-			}
+			var stepQuery = new QueryExpression("sdkmessageprocessingstep");
+			stepQuery.ColumnSet.AddColumns("sdkmessageprocessingstepid", "name");
+			stepQuery.Criteria.AddCondition("statecode", ConditionOperator.Equal, isEnabled ? 0 : 1);
+			var typeLink = stepQuery.AddLink("plugintype", "eventhandler", "plugintypeid");
+			typeLink.EntityAlias = "typeAliased";
+			typeLink.Columns.AddColumns("name");
+			var assemblyLink = typeLink.AddLink("pluginassembly", "pluginassemblyid", "pluginassemblyid");
+			assemblyLink.EntityAlias = "assemblyAliased";
+			assemblyLink.Columns.AddColumns("name");
+
+			return Service.RetrieveMultiple(stepQuery).Entities
+				.Select(step =>
+					new
+					{
+						stepId = step.Id,
+						stepName = step.GetAttributeValue<string>("name"),
+						typeName = (string)step.GetAttributeValue<AliasedValue>("typeAliased.name").Value,
+						assemblyName = (string)step.GetAttributeValue<AliasedValue>("assemblyAliased.name").Value
+					})
+				.ToArray()
+				.Where(s => pluginPatternsToToggle.Any(n => Regex.IsMatch(s.stepName, n))
+					|| pluginPatternsToToggle.Any(n => Regex.IsMatch(s.typeName, n))
+					|| pluginPatternsToToggle.Any(n => Regex.IsMatch(s.assemblyName, n)))
+				.Select(s => new EntityReference(SdkMessageProcessingStep.EntityLogicalName, s.stepId))
+				.ToArray();
 		}
 
 		#endregion

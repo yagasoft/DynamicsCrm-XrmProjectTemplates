@@ -52,15 +52,14 @@ namespace Xrm.Framework.Test.Unit.Moq.Hybrid
 		protected static Guid orgId;
 		protected static string orgName;
 
-		// keep a record of which steps were enabled, in order to revert them to their state after testing
-		protected static List<SdkMessageProcessingStep> disabledSteps = new List<SdkMessageProcessingStep>();
-
 		protected static bool testFailed;
 
 		protected static bool commonSetup;
 
-		protected bool disableSteps;
-		protected bool undoTestActions;
+		protected static bool disableSteps;
+		protected static List<string> pluginPatternsToToggle = new List<string>();
+
+		protected static bool undoTestActions;
 
 		#endregion
 
@@ -101,6 +100,15 @@ namespace Xrm.Framework.Test.Unit.Moq.Hybrid
 
 			// any plugin instance requesting a service will get this one
 			OrganizationServiceFactoryMock.Setup(factory => factory.CreateOrganizationService(It.IsAny<Guid?>())).Returns(OrganizationService);
+		}
+
+		public static void SetupCommonInner()
+		{
+			// it's better to disable steps in this plugin to avoid conflict.
+			if (disableSteps)
+			{
+				PluginsHelper.SetStepsState(false, pluginPatternsToToggle.ToArray());
+			}
 		}
 
 		protected abstract void SetupCommon();
@@ -197,18 +205,6 @@ namespace Xrm.Framework.Test.Unit.Moq.Hybrid
 		}
 
 		#endregion
-
-		protected override void SetPluginEvent(string primaryEntityName, string messageName,
-			SdkMessageProcessingStepImageStage stage)
-		{
-			base.SetPluginEvent(primaryEntityName, messageName, stage);
-
-			// it's better to disable steps in this plugin to avoid conflict.
-			if (disableSteps)
-			{
-				PluginsHelper.DisableSteps(assemblyName, primaryEntityName, messageName, disabledSteps);
-			}
-		}
 
 		protected void PrepareTest()
 		{
@@ -337,7 +333,10 @@ namespace Xrm.Framework.Test.Unit.Moq.Hybrid
 
 		public static void CleanupCommon()
 		{
-			PluginsHelper.EnableSteps(disabledSteps);
+			if (disableSteps)
+			{
+				PluginsHelper.SetStepsState(true, pluginPatternsToToggle.ToArray());
+			}
 		}
 
 		#endregion

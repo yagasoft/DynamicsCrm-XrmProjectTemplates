@@ -1,5 +1,5 @@
 # DynamicsCrm-XrmProjectTemplates
-### Version: 2.7.9
+### Version: 2.8.1
 ---
 
 A Visual Studio plugin that makes it easier to perform unit/intergration-hybrid testing for CRM plugins. It also includes a few templates for plugin and step projects for fast start.
@@ -9,8 +9,9 @@ A Visual Studio plugin that makes it easier to perform unit/intergration-hybrid 
 + Create ready-to-code plugin and step project with the click of a mouse
   + Includes logging, initialisation, and error handling
 + Create a 'hybrid' test to easily debug the plugin code
-  + Testing connects to CRM as if it's registered
+  + Connects to CRM as if plugins are registered
   + Supports rollback of actions done in CRM by the test
+  + Supports disabling plugin steps during testing to get more realistic results
 
 ### Credits
 
@@ -22,6 +23,11 @@ A Visual Studio plugin that makes it easier to perform unit/intergration-hybrid 
 		+ Added plugin project templates
 		
 ### Changes
+
+#### _v2.8.1 (2018-08-27)_
++ Changed: moved common parameters to the class level (static)
++ Improved: plugin steps toggle is now based on a name pattern to be more specific
++ Fixed: CRM service access hangs tests
 
 #### _v2.7.9 (2018-08-02)_
 + Fixed: pool init error

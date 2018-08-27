@@ -36,9 +36,11 @@ namespace Xrm.Framework.Test.Unit
 	internal class Helper
 	{
 		internal static IEnhancedServicePool<EnhancedOrgService> ServicePool =
-			EnhancedServiceHelper.GetPool(Defaults.CONNECTION_STRING, 10, new EnhancedServiceParams{IsTransactionsEnabled = true});
+			EnhancedServiceHelper.GetPool(Defaults.CONNECTION_STRING, 1, new EnhancedServiceParams{IsTransactionsEnabled = true});
 
-		internal static EnhancedOrgService Service => ServicePool.GetService();
+		private static EnhancedOrgService service;
+		internal static EnhancedOrgService Service => service = service ?? ServicePool.GetService();
+
 		internal static XrmServiceContext Context => new XrmServiceContext(Service);
 
 		#region Assembly

@@ -41,15 +41,27 @@ namespace $rootnamespace$
 			pluginClass = typeof(PluginClass);
 		}
 
+	    [ExcludeFromCodeCoverage]
+	    [ClassInitialize]
+        public static void Initialise(TestContext context)
+        {
+            // TODO: disable steps flag
+            disableSteps = Defaults.DISABLE_STEPS;
+            // TODO: Regex patterns which match step, type, and assembly names to toggle
+            //pluginPatternsToToggle.AddRange(new[] { ".*?ActivityFeeds.*?" });
+
+            // TODO: should the framework revert actions taken by the test on CRM
+            undoTestActions = Defaults.UNDO_TEST_ACTIONS;
+
+            SetupCommonInner();
+        }
+
 		/// <summary>
 		///     If there are common records that can be prepared for all tests, do that here.<br />
 		///     Anything done in this method MUST be static, as it's run only once.
 		/// </summary>
 		protected override void SetupCommon()
 		{
-			// TODO: should the framework revert actions taken by the test on CRM
-			undoTestActions = Defaults.UNDO_TEST_ACTIONS;
-
 			// TODO: add common records preparations below
 		}
 
@@ -61,9 +73,6 @@ namespace $rootnamespace$
 		/// </summary>
 		private void Setup$safeitemrootname$Test()
 		{
-			// TODO: disable steps flag, related only to the following message and entity
-			disableSteps = Defaults.DISABLE_STEPS;
-			
 			// TODO: set the plugin trigger
 			SetPluginEvent("incident", "Create",
 				Xrm.Framework.Test.Unit.SdkMessageProcessingStepImageStage.PostOperation);
