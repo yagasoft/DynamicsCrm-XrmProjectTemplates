@@ -1,4 +1,7 @@
 # DynamicsCrm-XrmProjectTemplates
+
+[![Join the chat at https://gitter.im/yagasoft/DynamicsCrm-XrmProjectTemplates](https://badges.gitter.im/yagasoft/DynamicsCrm-XrmProjectTemplates.svg)](https://gitter.im/yagasoft/DynamicsCrm-XrmProjectTemplates?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ### Version: 2.8.1
 ---
 
