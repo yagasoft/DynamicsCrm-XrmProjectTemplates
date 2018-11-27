@@ -2,7 +2,7 @@
 
 [![Join the chat at https://gitter.im/yagasoft/DynamicsCrm-XrmProjectTemplates](https://badges.gitter.im/yagasoft/DynamicsCrm-XrmProjectTemplates.svg)](https://gitter.im/yagasoft/DynamicsCrm-XrmProjectTemplates?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-### Version: 2.8.1
+### Version: 2.8.2
 ---
 
 A Visual Studio plugin that makes it easier to perform unit/intergration-hybrid testing for CRM plugins. It also includes a few templates for plugin and step projects for fast start.
@@ -26,6 +26,9 @@ A Visual Studio plugin that makes it easier to perform unit/intergration-hybrid 
 		+ Added plugin project templates
 		
 ### Changes
+
+#### _v2.8.2 (2018-11-27)_
++ Changed: v9 plugin template now uses the NuGet Common.cs package
 
 #### _v2.8.1 (2018-08-27)_
 + Changed: moved common parameters to the class level (static)

@@ -16,7 +16,6 @@
     <Project File="ProjectTemplate.csproj" ReplaceParameters="true">
       <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="key.snk">key.snk</ProjectItem>
-      <ProjectItem ReplaceParameters="true" TargetFileName="Common.cs">Common.cs</ProjectItem>
     </Project>
   </TemplateContent>
 	<WizardExtension>
@@ -25,6 +24,7 @@
 	</WizardExtension>
 	<WizardData>
     <packages repository="extension" repositoryId="XrmProjectTemplates">
+      <package id="LinkDev.Libraries.Common.File" version="3.7.4" targetFramework="net452" />
       <package id="Microsoft.CrmSdk.CoreAssemblies" version="9.0.0.7" targetFramework="net452" />
       <package id="Microsoft.CrmSdk.Workflow" version="9.0.0.7" targetFramework="net452" />
     </packages>
