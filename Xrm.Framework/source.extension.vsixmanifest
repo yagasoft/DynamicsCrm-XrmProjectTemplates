@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="XrmProjectTemplates" Version="2.8.2" Language="en-US" Publisher="Ahmed el-Sawalhy" />
+        <Identity Id="XrmProjectTemplates" Version="2.8.3" Language="en-US" Publisher="Ahmed el-Sawalhy" />
         <DisplayName>XRM Templates</DisplayName>
         <Description xml:space="preserve">Visual Studio plugin that makes it easier to perform unit/intergration-hybrid testing for CRM plugins. It also includes a few templates for plugin and step projects for fast start.</Description>
         <MoreInfo>https://marketplace.visualstudio.com/items?itemName=Yagasoft.XrmProjectTemplates</MoreInfo>

@@ -25,8 +25,9 @@
 	<WizardData>
 		<packages repository="extension" repositoryId="XrmProjectTemplates">
       <package id="Microsoft.IdentityModel" version="6.1.7600.16394" targetFramework="net452" />
-      <package id="Microsoft.CrmSdk.CoreAssemblies" version="8.1.0.2" targetFramework="net452" />
-      <package id="Microsoft.CrmSdk.Workflow" version="8.1.0.2" targetFramework="net452" />
+      <package id="Microsoft.CrmSdk.CoreAssemblies" version="8.2.0.2" targetFramework="net452" />
+      <package id="Microsoft.CrmSdk.Workflow" version="8.2.0.2" targetFramework="net452" />
+      <package id="LinkDev.Libraries.Common.File" version="3.7.6" targetFramework="net452" />
     </packages>
 	</WizardData>
 </VSTemplate>
