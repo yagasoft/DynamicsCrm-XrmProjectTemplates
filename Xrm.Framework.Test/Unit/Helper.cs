@@ -1,5 +1,5 @@
 ﻿// Project / File: Tests.Plugins.UnitTests / Helper.cs
-//         Author: Ahmed el-Sawalhy (LINK Development - MBS)
+//         Author: Ahmed Elsawalhy (Yagasoft.com)
 //        Created: 2015 / 04 / 05 (3:37 PM)
 //       Modified: 2015 / 04 / 14 (10:13 AM)
 
@@ -11,11 +11,11 @@ using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using LinkDev.Libraries.EnhancedOrgService;
-using LinkDev.Libraries.EnhancedOrgService.Helpers;
-using LinkDev.Libraries.EnhancedOrgService.Params;
-using LinkDev.Libraries.EnhancedOrgService.Pools;
-using LinkDev.Libraries.EnhancedOrgService.Services;
+using Yagasoft.Libraries.EnhancedOrgService;
+using Yagasoft.Libraries.EnhancedOrgService.Helpers;
+using Yagasoft.Libraries.EnhancedOrgService.Params;
+using Yagasoft.Libraries.EnhancedOrgService.Pools;
+using Yagasoft.Libraries.EnhancedOrgService.Services;
 using Microsoft.Xrm.Client;
 using Microsoft.Xrm.Client.Services;
 using Microsoft.Xrm.Sdk;

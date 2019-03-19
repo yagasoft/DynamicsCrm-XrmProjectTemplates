@@ -4,8 +4,8 @@
     <id>Xrm.Framework.Test.Hybrid</id>
     <version>1.0.1</version>
     <title>XRM Hybrid Test Framework</title>
-    <authors>WaelHamze,ramontebar,Ahmed el-Sawalhy</authors>
-    <owners>Ahmed el-Sawalhy</owners>
+    <authors>WaelHamze,ramontebar,Ahmed Elsawalhy</authors>
+    <owners>Ahmed Elsawalhy</owners>
     <licenseUrl>http://xrmtestframework.codeplex.com/license</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>

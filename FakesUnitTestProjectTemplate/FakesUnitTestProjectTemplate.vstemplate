@@ -30,8 +30,8 @@
 	</WizardExtension>
 	<WizardData>
 		<packages repository="extension" repositoryId="XrmProjectTemplates">
-      <package id="LinkDev.Libraries.Common" version="1.6.6" targetFramework="net452" developmentDependency="true" />
-      <package id="LinkDev.Libraries.EnhancedOrgService" version="1.3.4" targetFramework="net452" developmentDependency="true" />
+      <package id="Yagasoft.Libraries.Common" version="2.1.3" targetFramework="net452" developmentDependency="true" />
+      <package id="Yagasoft.Libraries.EnhancedOrgService" version="2.1.2" targetFramework="net452" developmentDependency="true" />
       <package id="Microsoft.CrmSdk.CoreAssemblies" version="9.0.0.7" targetFramework="net452" />
       <package id="Microsoft.CrmSdk.Deployment" version="9.0.0.7" targetFramework="net452" />
       <package id="Microsoft.CrmSdk.Workflow" version="9.0.0.7" targetFramework="net452" />

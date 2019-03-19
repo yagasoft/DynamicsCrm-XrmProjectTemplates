@@ -1,5 +1,5 @@
 ﻿// Project / File: Tests.Plugins.UnitTests / PluginsHelper.cs
-//         Author: Ahmed el-Sawalhy (LINK Development - MBS)
+//         Author: Ahmed Elsawalhy (Yagasoft.com)
 //        Created: 2015 / 04 / 02 (11:05 AM)
 //       Modified: 2015 / 04 / 06 (1:08 PM)
 

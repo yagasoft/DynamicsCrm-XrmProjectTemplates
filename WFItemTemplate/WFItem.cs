@@ -12,7 +12,7 @@ using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Metadata.Query;
 using Microsoft.Xrm.Sdk.Query;
 using Microsoft.Xrm.Sdk.Workflow;
-using LinkDev.Libraries.Common;
+using Yagasoft.Libraries.Common;
 
 #endregion
 
@@ -82,7 +82,7 @@ namespace $rootnamespace$
 		protected override void Execute(CodeActivityContext context)
 		{
 			////var wfContext = context.GetExtension<IWorkflowContext>();
-			new $safeitemrootname$Logic().Execute(this, context, PluginUser.InitiatingUser);
+			new $safeitemrootname$Logic().Execute(this, context, PluginUser.ContextUser);
 		}
 	}
 
@@ -94,7 +94,7 @@ namespace $rootnamespace$
 			////var target = (Entity)context.InputParameters["Target"];
 			////var typedTarget = target.ToEntity<Entity>();
 
-			////LinkDev.Libraries.Common.CrmHelpers.LogAttributeValues(target.Attributes, target, log);
+			////Yagasoft.Libraries.Common.CrmHelpers.LogAttributeValues(target.Attributes, target, log);
 
 			// WF logic ...
 

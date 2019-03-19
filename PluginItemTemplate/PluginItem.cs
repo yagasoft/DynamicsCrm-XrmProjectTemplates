@@ -11,7 +11,7 @@ using Microsoft.Xrm.Sdk.Client;
 using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Metadata.Query;
 using Microsoft.Xrm.Sdk.Query;
-using LinkDev.Libraries.Common;
+using Yagasoft.Libraries.Common;
 
 #endregion
 
@@ -23,17 +23,28 @@ namespace $rootnamespace$
 	/// </summary>
 	public class $safeitemrootname$ : IPlugin
 	{
+		////public string UnsecureConfig { get; set; }
+
+		////public $safeitemrootname$(string unsecureConfig, string secureConfig)
+		////{
+		////	UnsecureConfig = unsecureConfig;
+		////}
+
 		public void Execute(IServiceProvider serviceProvider)
 		{
 			////var context = (IPluginExecutionContext)serviceProvider.GetService(typeof(IPluginExecutionContext));
-			new $safeitemrootname$Logic().Execute(this, serviceProvider, PluginUser.System);
+			new $safeitemrootname$Logic().Execute(this, serviceProvider, PluginUser.ContextUser);
 		}
 	}
 
 	internal class $safeitemrootname$Logic : PluginLogic<$safeitemrootname$>
 	{
+		////private string config { get; set; }
+
 		public $safeitemrootname$Logic() : base("Create", PluginStage.PreOperation, "account")
-		{ }
+		{
+			////config = plugin.UnsecureConfig;
+		}
 
 		////protected override bool IsContextValid()
 		////{
@@ -48,7 +59,7 @@ namespace $rootnamespace$
 			////var target = (Entity)context.InputParameters["Target"];
 			////var typedTarget = target.ToEntity<Entity>();
 
-			////LinkDev.Libraries.Common.CrmHelpers.LogAttributeValues(target.Attributes, target, log);
+			////Yagasoft.Libraries.Common.CrmHelpers.LogAttributeValues(target.Attributes, target, log);
 
 			// plugin logic ...
 

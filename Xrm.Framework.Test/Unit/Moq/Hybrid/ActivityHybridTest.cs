@@ -1,5 +1,5 @@
 ﻿// Project / File: Tests.Plugins.UnitTests / PluginHybridTest.cs
-//         Author: Ahmed el-Sawalhy (LINK Development - MBS)
+//         Author: Ahmed Elsawalhy (Yagasoft.com)
 //        Created: 2015 / 04 / 14 (9:39 AM)
 //       Modified: 2015 / 04 / 19 (1:19 PM)
 
@@ -9,8 +9,8 @@ using System.Activities;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
-using LinkDev.Libraries.EnhancedOrgService;
-using LinkDev.Libraries.EnhancedOrgService.Services;
+using Yagasoft.Libraries.EnhancedOrgService;
+using Yagasoft.Libraries.EnhancedOrgService.Services;
 using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Client.Services;
 using Microsoft.Xrm.Sdk;

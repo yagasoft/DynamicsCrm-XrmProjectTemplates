@@ -1,5 +1,5 @@
 ﻿// Project / File: Tests.Plugins.UnitTests / Defaults.cs
-//         Author: Ahmed el-Sawalhy (LINK Development - MBS)
+//         Author: Ahmed Elsawalhy (Yagasoft.com)
 //        Created: 2015 / 04 / 05 (3:47 PM)
 //       Modified: 2015 / 04 / 06 (1:08 PM)
 
